@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code_Infinity | Android Development Mastery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-menu-overlay"></div>
+            <a href="../index.html" class="logo">
+                <!-- Coding-themed logo with brackets and infinity symbol -->
+                <svg class="logo-img glowing" xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 500 60">
+                    <defs>
+                        <linearGradient id="codeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#00ffff" style="stop-opacity:1" />
+                            <stop offset="50%" stop-color="#ff00ff" style="stop-opacity:1" />
+                            <stop offset="100%" stop-color="#00ff80" style="stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Code brackets { } -->
+                    <text x="5" y="45" font-size="50" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">{</text>
+                    
+                    <!-- Infinity symbol ∞ -->
+                    <path d="M 45 30 Q 55 20, 65 30 Q 75 40, 85 30 Q 95 20, 105 30 Q 95 40, 85 30 Q 75 20, 65 30 Q 55 40, 45 30" 
+                          stroke="url(#codeGradient)" 
+                          stroke-width="3" 
+                          fill="none" 
+                          filter="url(#glow)"/>
+                    
+                    <!-- Closing bracket } -->
+                    <text x="115" y="45" font-size="50" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">}</text>
+                    
+                    <!-- Code_Infinity text -->
+                    <text x="150" y="42" font-size="32" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">
+                        Code_Infinity
+                    </text>
+                    
+                    <!-- Terminal cursor -->
+                    <rect x="480" y="20" width="3" height="20" fill="url(#codeGradient)" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite"/>
+                    </rect>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <div class="dropdown">
+                    <div class="dropdown-toggle"><span>Courses</span><i class="fas fa-chevron-down"></i></div>
+                    <div class="dropdown-menu">
+                        <a href="Full_Stack_Web_Dev.html" class="dropdown-item"><i class="fas fa-code course-icon" style="color: var(--neon-cyan);"></i><div><div style="font-weight: 700;">Full-Stack Web Development</div><div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div></div></a>
+                        <a href="AI_ML.html" class="dropdown-item"><i class="fas fa-brain course-icon" style="color: #9b59b6;"></i><div><div style="font-weight: 700;">AI & Machine Learning</div><div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div></div></a>
+                        <a href="Cybersecurity.html" class="dropdown-item"><i class="fas fa-shield-alt course-icon" style="color: #e74c3c;"></i><div><div style="font-weight: 700;">Cybersecurity</div><div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div></div></a>
+                        <a href="Game_Dev.html" class="dropdown-item"><i class="fas fa-gamepad course-icon" style="color: #f39c12;"></i><div><div style="font-weight: 700;">Game Development</div><div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div></div></a>
+                        <a href="Android_Dev.html" class="dropdown-item"><i class="fab fa-android course-icon" style="color: #3ddc84;"></i><div><div style="font-weight: 700; color: #3ddc84;">Android App Development</div><div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div></div></a>
+                    </div>
+                </div>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="dropdown theme-dropdown">
+                <div class="dropdown-toggle"><span>Themes</span><i class="fas fa-chevron-down"></i></div>
+                <div class="dropdown-menu">
+                    <div class="theme-option active" data-theme="neon-nexus"><span>Neon Nexus</span><span class="current-indicator">(current)</span></div>
+                    <div class="theme-option" data-theme="dark"><span>Dark</span></div>
+                    <div class="theme-option" data-theme="white"><span>White</span></div>
+                </div>
+            </div>
+            <button class="cta-button">Go To Channel</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <!-- Falling glass overlay -->
+        <div class="glass"></div>
+        <div class="glass"></div>
+        <div class="glass"></div>
+        <div class="glass"></div>
+        
+        <h1>Android Development Mastery 2026</h1>
+        <p>Build modern Android apps with Kotlin and Jetpack Compose. From basics to Play Store publishing.</p>
+        <div class="hero-buttons">
+            <a href="#playlist" class="btn btn-primary"><i class="fab fa-android"></i> Start Learning Now</a>
+            <a href="#about" class="btn btn-secondary"><i class="fas fa-play-circle"></i> Watch Intro Video</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About This Playlist</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>This comprehensive 18-video playlist takes you from Kotlin basics to publishing professional Android apps. Each video builds upon the previous, creating a complete learning journey.</p>
+                    <div class="features-grid">
+                        <div class="feature"><h3>📱 Complete Android Path</h3><p>From Kotlin basics to app publishing</p></div>
+                        <div class="feature"><h3>🎨 Modern UI</h3><p>Jetpack Compose & Material Design 3</p></div>
+                        <div class="feature"><h3>🎯 Real Apps</h3><p>Build portfolio-worthy applications</p></div>
+                        <div class="feature"><h3>⚡ Play Store Ready</h3><p>Learn deployment & monetization</p></div>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <h3>Technologies You'll Master</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item floating"><i class="fab fa-android tech-icon" style="font-size: 2.5rem; color: #3ddc84;"></i><span class="tech-name">Android</span></div>
+                        <div class="tech-item floating" style="animation-delay:.2s"><i class="fas fa-code tech-icon" style="font-size: 2.5rem; color: #7f52ff;"></i><span class="tech-name">Kotlin</span></div>
+                        <div class="tech-item floating" style="animation-delay:.4s"><i class="fas fa-rocket tech-icon" style="font-size: 2.5rem; color: #4285f4;"></i><span class="tech-name">Jetpack Compose</span></div>
+                        <div class="tech-item floating" style="animation-delay:.6s"><i class="fas fa-database tech-icon" style="font-size: 2.5rem; color: #ff6b6b;"></i><span class="tech-name">Room DB</span></div>
+                        <div class="tech-item floating" style="animation-delay:.8s"><i class="fas fa-fire tech-icon" style="font-size: 2.5rem; color: #ffca28;"></i><span class="tech-name">Firebase</span></div>
+                        <div class="tech-item floating" style="animation-delay:1s"><i class="fas fa-plug tech-icon" style="font-size: 2.5rem; color: #00bcd4;"></i><span class="tech-name">Retrofit</span></div>
+                        <div class="tech-item floating" style="animation-delay:1.2s"><i class="fas fa-layer-group tech-icon" style="font-size: 2.5rem; color: #8e24aa;"></i><span class="tech-name">MVVM</span></div>
+                        <div class="tech-item floating" style="animation-delay:1.4s"><i class="fab fa-google-play tech-icon" style="font-size: 2.5rem; color: #34a853;"></i><span class="tech-name">Play Store</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="playlist" class="playlist">
+        <div class="container">
+            <h2 class="section-title">Complete Learning Playlist</h2>
+            <p class="section-subtitle">18 Videos - From Beginner to Android Developer</p>
+            
+            <div class="playlist-container">
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 1: Kotlin & Android Basics (Videos 1-4)</h3>
+                    <div class="video-grid">
+                        <div class="video-card"><div class="video-number">01</div><h4 class="video-title">Kotlin Programming Fundamentals</h4><ul class="video-topics"><li>Kotlin syntax & basics</li><li>Variables, functions, classes</li><li>Null safety</li><li>Collections & lambdas</li><li>Coroutines intro</li><li>OOP in Kotlin</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">02</div><h4 class="video-title">Android Studio Setup & Basics</h4><ul class="video-topics"><li>Android Studio setup</li><li>Project structure</li><li>Gradle basics</li><li>Emulator setup</li><li>First Android app</li><li>Debugging tools</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">03</div><h4 class="video-title">Activities & Lifecycles</h4><ul class="video-topics"><li>Activity lifecycle</li><li>Intent & navigation</li><li>Data passing</li><li>Back stack</li><li>Configuration changes</li><li>ViewModel basics</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">04</div><h4 class="video-title">XML Layouts & Views</h4><ul class="video-topics"><li>XML layout basics</li><li>Common views</li><li>ConstraintLayout</li><li>RecyclerView</li><li>View binding</li><li>Custom views intro</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                    </div>
+                </div>
+
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 2: Jetpack Compose (Videos 5-8)</h3>
+                    <div class="video-grid">
+                        <div class="video-card"><div class="video-number">05</div><h4 class="video-title">Jetpack Compose Fundamentals</h4><ul class="video-topics"><li>Composable functions</li><li>State management</li><li>Recomposition</li><li>Modifiers</li><li>Layout composables</li><li>Preview annotations</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">06</div><h4 class="video-title">Material Design 3 with Compose</h4><ul class="video-topics"><li>Material 3 theming</li><li>Typography & colors</li><li>Components</li><li>Navigation drawer</li><li>Bottom navigation</li><li>Dynamic colors</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">07</div><h4 class="video-title">Navigation in Compose</h4><ul class="video-topics"><li>Navigation component</li><li>NavController</li><li>Passing arguments</li><li>Nested navigation</li><li>Deep links</li><li>Type-safe navigation</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">08</div><h4 class="video-title">State & Side Effects</h4><ul class="video-topics"><li>remember & rememberSaveable</li><li>State hoisting</li><li>LaunchedEffect</li><li>SideEffect</li><li>DisposableEffect</li><li>derivedStateOf</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                    </div>
+                </div>
+
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 3: Data & Architecture (Videos 9-12)</h3>
+                    <div class="video-grid">
+                        <div class="video-card"><div class="video-number">09</div><h4 class="video-title">MVVM Architecture</h4><ul class="video-topics"><li>Architecture patterns</li><li>ViewModel in depth</li><li>Repository pattern</li><li>Use cases</li><li>Dependency injection</li><li>Hilt setup</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">10</div><h4 class="video-title">Room Database</h4><ul class="video-topics"><li>Room setup</li><li>Entities & DAOs</li><li>Queries & relations</li><li>Migrations</li><li>Flow integration</li><li>Database testing</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">11</div><h4 class="video-title">API Integration with Retrofit</h4><ul class="video-topics"><li>Retrofit setup</li><li>API interfaces</li><li>JSON parsing</li><li>Error handling</li><li>Interceptors</li><li>Caching strategies</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">12</div><h4 class="video-title">Coroutines & Flow</h4><ul class="video-topics"><li>Coroutines deep dive</li><li>Flows & channels</li><li>StateFlow & SharedFlow</li><li>Error handling</li><li>Testing coroutines</li><li>Best practices</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                    </div>
+                </div>
+
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 4: Advanced Features (Videos 13-15)</h3>
+                    <div class="video-grid">
+                        <div class="video-card"><div class="video-number">13</div><h4 class="video-title">Firebase Integration</h4><ul class="video-topics"><li>Firebase setup</li><li>Authentication</li><li>Firestore database</li><li>Cloud messaging</li><li>Analytics</li><li>Crashlytics</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">14</div><h4 class="video-title">Permissions & Sensors</h4><ul class="video-topics"><li>Runtime permissions</li><li>Camera & gallery</li><li>Location services</li><li>Sensors usage</li><li>Notifications</li><li>WorkManager</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">15</div><h4 class="video-title">Testing & CI/CD</h4><ul class="video-topics"><li>Unit testing</li><li>UI testing</li><li>MockK framework</li><li>Test coverage</li><li>GitHub Actions</li><li>Automated builds</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                    </div>
+                </div>
+
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 5: Publishing (Videos 16-18)</h3>
+                    <div class="video-grid">
+                        <div class="video-card"><div class="video-number">16</div><h4 class="video-title">App Optimization</h4><ul class="video-topics"><li>Performance profiling</li><li>Memory optimization</li><li>Battery efficiency</li><li>App size reduction</li><li>ProGuard/R8</li><li>Baseline profiles</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">17</div><h4 class="video-title">Play Store Publishing</h4><ul class="video-topics"><li>App signing</li><li>Store listing</li><li>Screenshots & video</li><li>Release management</li><li>In-app purchases</li><li>Ads integration</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                        <div class="video-card"><div class="video-number">18</div><h4 class="video-title">Career & Capstone</h4><ul class="video-topics"><li>Portfolio building</li><li>Full app project</li><li>Code review</li><li>Interview prep</li><li>Career guidance</li><li>Next steps</li><li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" class="notes-section">
+        <div class="container">
+            <h2 class="section-title">Course Notes & Resources</h2>
+            <div class="notes-content">
+                <p class="notes-description">Access comprehensive notes for all videos in this course. These notes include detailed explanations, code examples, and additional resources to help you master the material. You can view them online or download as PDF.</p>
+                <div class="notes-buttons">
+                    <a href="../Course_Notes/Android_Dev_Notes.html" target="_blank" class="btn btn-primary notes-download-btn" onclick="passThemeToNotes()">
+                        <i class="fas fa-book"></i> View Course Notes
+                    </a>
+                    <button class="btn btn-secondary notes-download-btn" onclick="downloadNotesPDF('Android_Dev_Notes.html', 'Android_Development_Notes.pdf')">
+                        <i class="fas fa-download"></i> Download PDF Notes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about-info">
+        <h2 class="section-title">About Code_Infinity</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Pushing the Boundaries of Code</h2>
+                <p>Code_Infinity is dedicated to providing high-quality programming education that goes beyond the basics.</p>
+                <div class="stats">
+                    <div class="stat"><div class="stat-number">50K+</div><div class="stat-label">Students</div></div>
+                    <div class="stat"><div class="stat-number">22</div><div class="stat-label">Courses</div></div>
+                    <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Satisfaction</div></div>
+                    <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Hours</div></div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-icon-box android-dev">
+                    <i class="fab fa-android"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Code_Infinity</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Master cutting-edge technologies with our comprehensive courses.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Courses</h3>
+                <ul class="footer-links">
+                    <li><a href="Full_Stack_Web_Dev.html">Full-Stack Development</a></li>
+                    <li><a href="AI_ML.html">AI & Machine Learning</a></li>
+                    <li><a href="Cybersecurity.html">Cybersecurity</a></li>
+                    <li><a href="Game_Dev.html">Game Development</a></li>
+                    <li><a href="Android_Dev.html">Android Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@codeinfinity.com">contact@codeinfinity.com</a></li>
+                    <li><a href="#">YouTube Channel</a></li>
+                    <li><a href="#">Discord Server</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="copyright-line">© 2026 Code_Infinity. All rights reserved.</span>
+            <span class="copyright-line">Designed with <i class="fas fa-heart" style="color: var(--neon-pink);"></i> for the developer community</span>
+        </div>
+    </footer>
+
+    <script src="../js/themes.js"></script>
+    <script src="js/phases.js"></script>
+    <script src="js/milestones.js"></script>
+    <script src="js/notes-download.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle for course detail pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            
+            if (mobileMenuToggle && navLinks) {
+                function toggleMobileMenu() {
+                    mobileMenuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.toggle('active');
+                    }
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                }
+                
+                mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+                
+                if (mobileMenuOverlay) {
+                    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+                }
+                
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navLinks.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+                
+                navLinks.querySelectorAll('.dropdown-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        if (navLinks.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+                
+                navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            e.preventDefault();
+                            const targetId = href.substring(1);
+                            const targetElement = document.getElementById(targetId);
+                            if (targetElement) {
+                                if (navLinks.classList.contains('active')) {
+                                    toggleMobileMenu();
+                                }
+                                targetElement.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    });
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

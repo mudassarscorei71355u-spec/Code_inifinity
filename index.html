@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code_Infinity | Tech Mastery 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-menu-overlay"></div>
+            <a href="index.html" class="logo">
+                <!-- Coding-themed logo with brackets and infinity symbol -->
+                <svg class="logo-img glowing" xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 500 60">
+                    <defs>
+                        <linearGradient id="codeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#00ffff" style="stop-opacity:1" />
+                            <stop offset="50%" stop-color="#ff00ff" style="stop-opacity:1" />
+                            <stop offset="100%" stop-color="#00ff80" style="stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Code brackets { } -->
+                    <text x="5" y="45" font-size="50" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">{</text>
+                    
+                    <!-- Infinity symbol ∞ -->
+                    <path d="M 45 30 Q 55 20, 65 30 Q 75 40, 85 30 Q 95 20, 105 30 Q 95 40, 85 30 Q 75 20, 65 30 Q 55 40, 45 30" 
+                          stroke="url(#codeGradient)" 
+                          stroke-width="3" 
+                          fill="none" 
+                          filter="url(#glow)"/>
+                    
+                    <!-- Closing bracket } -->
+                    <text x="115" y="45" font-size="50" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">}</text>
+                    
+                    <!-- Code_Infinity text -->
+                    <text x="150" y="42" font-size="32" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">
+                        Code_Infinity
+                    </text>
+
+                    <!-- Terminal cursor -->
+                    <rect x="480" y="20" width="3" height="20" fill="url(#codeGradient)" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite"/>
+                    </rect>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                
+                <!-- Courses Dropdown -->
+                <div class="dropdown">
+                    <div class="dropdown-toggle">
+                        <span>Courses</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="Course_Details/Full_Stack_Web_Dev.html" class="dropdown-item">
+                            <i class="fas fa-code course-icon" style="color: var(--neon-cyan);"></i>
+                            <div>
+                                <div style="font-weight: 700; color: var(--neon-cyan);">Full-Stack Web Development</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                        <a href="Course_Details/AI_ML.html" class="dropdown-item">
+                            <i class="fas fa-brain course-icon" style="color: #9b59b6;"></i>
+                            <div>
+                                <div style="font-weight: 700;">AI & Machine Learning</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                        <a href="Course_Details/Cybersecurity.html" class="dropdown-item">
+                            <i class="fas fa-shield-alt course-icon" style="color: #e74c3c;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Cybersecurity</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                        <a href="Course_Details/Game_Dev.html" class="dropdown-item">
+                            <i class="fas fa-gamepad course-icon" style="color: #f39c12;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Game Development</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                        <a href="Course_Details/Android_Dev.html" class="dropdown-item">
+                            <i class="fab fa-android course-icon" style="color: #3ddc84;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Android App Development</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="dropdown theme-dropdown">
+                <div class="dropdown-toggle">
+                        <span>Themes</span>
+                        <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="theme-option active" data-theme="neon-nexus">
+                        <span>Neon Nexus</span>
+                        <span class="current-indicator">(current)</span>
+                    </div>
+                    <div class="theme-option" data-theme="dark">
+                        <span>Dark</span>
+                    </div>
+                    <div class="theme-option" data-theme="white">
+                        <span>White</span>
+                    </div>
+                </div>
+            </div>
+            <button class="cta-button">Go To Channel</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Falling glass overlay -->
+        <div class="glass"></div>
+        <div class="glass"></div>
+        <div class="glass"></div>
+        <div class="glass"></div>
+
+        <div class="hero-content">
+        <h1>Code Beyond Limits</h1>
+            <div class="hero-subtitle">Tech Mastery 2026</div>
+            <p class="hero-intro">
+                Master cutting-edge technologies with Code_Infinity. From Full-Stack Development 
+                to AI/ML, Cybersecurity, and more — learn everything from beginner to advanced 
+                with practical, real-world tutorials.
+        </p>
+        <div class="hero-buttons">
+            <a href="#courses" class="btn btn-primary">
+                <i class="fas fa-rocket"></i> Start Learning Now
+            </a>
+            <a href="#about" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i> About Us
+            </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section" id="courses">
+        <h2 class="section-title">Our Learning Paths</h2>
+        
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+            <div class="category-tab active" data-category="web-dev">Full-Stack Development</div>
+            <div class="category-tab" data-category="ai-ml">AI & Machine Learning</div>
+            <div class="category-tab" data-category="cybersecurity">Cybersecurity</div>
+            <div class="category-tab" data-category="game-dev">Game Development</div>
+            <div class="category-tab" data-category="android-dev">Android App Development</div>
+        </div>
+        
+        <!-- Full-Stack Development Courses -->
+        <div class="courses-grid category-content" id="web-dev-courses">
+            <div class="course-card web-dev floating">
+                <div class="course-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="course-title">Full Stack Web Development</h3>
+                <p class="course-desc">Master the complete web development stack from frontend to backend with modern technologies.</p>
+                <ul class="course-features">
+                    <li>HTML5, CSS3, JavaScript</li>
+                    <li>React & Next.js</li>
+                    <li>Node.js & Express</li>
+                    <li>MongoDB & PostgreSQL</li>
+                    <li>Deployment & DevOps</li>
+                </ul>
+                <div class="course-actions">
+                    <a href="Course_Details/Full_Stack_Web_Dev.html" class="course-action-btn details-btn">
+                        <i class="fas fa-info-circle"></i> View Course Details
+                    </a>
+                    <a href="https://youtube.com/playlist?list=YOUR_FULLSTACK_PLAYLIST" target="_blank" class="course-action-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> Access Playlist
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+            
+        <!-- AI & Machine Learning Courses -->
+        <div class="courses-grid category-content" id="ai-ml-courses" style="display: none">
+            <div class="course-card ai-ml floating">
+                <div class="course-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="course-title">AI & Machine Learning</h3>
+                <p class="course-desc">Master artificial intelligence and machine learning from fundamentals to advanced deep learning techniques.</p>
+                <ul class="course-features">
+                    <li>Python Fundamentals for AI/ML</li>
+                    <li>Data Science & Preprocessing</li>
+                    <li>Machine Learning Algorithms</li>
+                    <li>Deep Learning & Neural Networks</li>
+                    <li>Real-world AI Projects</li>
+                </ul>
+                <div class="course-actions">
+                    <a href="Course_Details/AI_ML.html" class="course-action-btn details-btn">
+                        <i class="fas fa-info-circle"></i> View Course Details
+                    </a>
+                    <a href="https://youtube.com/playlist?list=YOUR_AI_ML_PLAYLIST" target="_blank" class="course-action-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> Access Playlist
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cybersecurity Courses -->
+        <div class="courses-grid category-content" id="cybersecurity-courses" style="display: none">
+            <div class="course-card cybersecurity floating">
+                <div class="course-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="course-title">Cybersecurity</h3>
+                <p class="course-desc">Master cybersecurity fundamentals, ethical hacking, and protect systems from threats.</p>
+                <ul class="course-features">
+                    <li>Introduction to Cybersecurity</li>
+                    <li>Network Security & Protocols</li>
+                    <li>Ethical Hacking & Penetration Testing</li>
+                    <li>Security Tools & Techniques</li>
+                    <li>Real-world Security Projects</li>
+                </ul>
+                <div class="course-actions">
+                    <a href="Course_Details/Cybersecurity.html" class="course-action-btn details-btn">
+                        <i class="fas fa-info-circle"></i> View Course Details
+                    </a>
+                    <a href="https://youtube.com/playlist?list=YOUR_CYBERSECURITY_PLAYLIST" target="_blank" class="course-action-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> Access Playlist
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Game Development Courses -->
+        <div class="courses-grid category-content" id="game-dev-courses" style="display: none">
+            <div class="course-card game-dev floating">
+                <div class="course-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3 class="course-title">Game Development</h3>
+                <p class="course-desc">Create amazing games from scratch using Unity, game design principles, and modern development tools.</p>
+                <ul class="course-features">
+                    <li>Introduction to Game Development</li>
+                    <li>Unity Engine Fundamentals</li>
+                    <li>Game Design & Mechanics</li>
+                    <li>2D & 3D Game Development</li>
+                    <li>Publishing & Monetization</li>
+                </ul>
+                <div class="course-actions">
+                    <a href="Course_Details/Game_Dev.html" class="course-action-btn details-btn">
+                        <i class="fas fa-info-circle"></i> View Course Details
+                    </a>
+                    <a href="https://youtube.com/playlist?list=YOUR_GAME_DEV_PLAYLIST" target="_blank" class="course-action-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> Access Playlist
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Android App Development Courses -->
+        <div class="courses-grid category-content" id="android-dev-courses" style="display: none">
+            <div class="course-card android-dev floating">
+                <div class="course-icon">
+                    <i class="fab fa-android"></i>
+                </div>
+                <h3 class="course-title">Android App Development</h3>
+                <p class="course-desc">Build modern Android applications using Kotlin, Jetpack Compose, and best practices.</p>
+                <ul class="course-features">
+                    <li>Kotlin Programming Fundamentals</li>
+                    <li>Android Studio & Development</li>
+                    <li>Jetpack Compose UI</li>
+                    <li>Database & API Integration</li>
+                    <li>Play Store Deployment</li>
+                </ul>
+                <div class="course-actions">
+                    <a href="Course_Details/Android_Dev.html" class="course-action-btn details-btn">
+                        <i class="fas fa-info-circle"></i> View Course Details
+                    </a>
+                    <a href="https://youtube.com/playlist?list=YOUR_ANDROID_DEV_PLAYLIST" target="_blank" class="course-action-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> Access Playlist
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Courses Section -->
+    <section class="upcoming-courses" id="upcoming">
+        <h2 class="section-title">More Courses Coming Soon</h2>
+        <div class="upcoming-grid">
+            <div class="upcoming-card">
+                <span class="upcoming-badge">2026</span>
+                <div class="upcoming-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="upcoming-title">Cloud Computing</h3>
+                <p class="upcoming-desc">Master AWS, Azure, and GCP for scalable cloud infrastructure and services.</p>
+                <ul class="upcoming-features">
+                    <li>AWS & EC2</li>
+                    <li>Azure Services</li>
+                    <li>Docker & Kubernetes</li>
+                    <li>Serverless Architecture</li>
+                </ul>
+                <button class="notify-btn"><i class="fas fa-bell"></i> Notify Me</button>
+            </div>
+            
+            <div class="upcoming-card">
+                <span class="upcoming-badge">2026</span>
+                <div class="upcoming-icon">
+                    <i class="fab fa-apple"></i>
+                </div>
+                <h3 class="upcoming-title">iOS Development</h3>
+                <p class="upcoming-desc">Build native iOS apps with Swift and SwiftUI for iPhone and iPad.</p>
+                <ul class="upcoming-features">
+                    <li>Swift Programming</li>
+                    <li>SwiftUI & UIKit</li>
+                    <li>Core Data & APIs</li>
+                    <li>App Store Deployment</li>
+                </ul>
+                <button class="notify-btn"><i class="fas fa-bell"></i> Notify Me</button>
+            </div>
+            
+            <div class="upcoming-card">
+                <span class="upcoming-badge">2026</span>
+                <div class="upcoming-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="upcoming-title">Data Science</h3>
+                <p class="upcoming-desc">Analyze data, build predictive models, and extract insights from big data.</p>
+                <ul class="upcoming-features">
+                    <li>Python & Pandas</li>
+                    <li>Data Visualization</li>
+                    <li>Statistical Analysis</li>
+                    <li>Machine Learning Models</li>
+                </ul>
+                <button class="notify-btn"><i class="fas fa-bell"></i> Notify Me</button>
+            </div>
+            
+            <div class="upcoming-card">
+                <span class="upcoming-badge">2026</span>
+                <div class="upcoming-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="upcoming-title">DevOps</h3>
+                <p class="upcoming-desc">Master CI/CD pipelines, automation, and infrastructure as code.</p>
+                <ul class="upcoming-features">
+                    <li>Docker & Containers</li>
+                    <li>Kubernetes Orchestration</li>
+                    <li>CI/CD Pipelines</li>
+                    <li>Infrastructure as Code</li>
+                </ul>
+                <button class="notify-btn"><i class="fas fa-bell"></i> Notify Me</button>
+            </div>
+            
+            <div class="upcoming-card">
+                <span class="upcoming-badge">2026</span>
+                <div class="upcoming-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="upcoming-title">Embedded Systems & Arduino</h3>
+                <p class="upcoming-desc">Master embedded systems programming with Arduino, microcontrollers, and real-world IoT projects.</p>
+                <ul class="upcoming-features">
+                    <li>Arduino Programming</li>
+                    <li>Microcontroller Basics</li>
+                    <li>Sensor Integration</li>
+                    <li>IoT Projects & Applications</li>
+                </ul>
+                <button class="notify-btn"><i class="fas fa-bell"></i> Notify Me</button>
+            </div>
+            
+            <div class="upcoming-card">
+                <span class="upcoming-badge">2026</span>
+                <div class="upcoming-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="upcoming-title">Operating System Development</h3>
+                <p class="upcoming-desc">Build your own operating system from scratch using assembly language, registers, and low-level programming.</p>
+                <ul class="upcoming-features">
+                    <li>Assembly Language</li>
+                    <li>Registers & Memory Management</li>
+                    <li>Kernel Development</li>
+                    <li>System Programming</li>
+                </ul>
+                <button class="notify-btn"><i class="fas fa-bell"></i> Notify Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <h2 class="section-title">About Code_Infinity</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Pushing the Boundaries of Code</h2>
+                <p>Code_Infinity is dedicated to providing high-quality programming education that goes beyond the basics. We believe in empowering developers with the skills needed to build the future.</p>
+                <p>Our courses are designed with a project-based approach, ensuring you gain practical experience while learning theoretical concepts.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">Courses</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Hours</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-icon-box">
+                    <i class="fas fa-infinity"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Code_Infinity</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Master cutting-edge technologies and push your coding skills beyond limits with our comprehensive courses.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Courses</h3>
+                <ul class="footer-links">
+                    <li><a href="Course_Details/Full_Stack_Web_Dev.html">Full-Stack Development</a></li>
+                    <li><a href="Course_Details/AI_ML.html">AI & Machine Learning</a></li>
+                    <li><a href="Course_Details/Cybersecurity.html">Cybersecurity</a></li>
+                    <li><a href="Course_Details/Game_Dev.html">Game Development</a></li>
+                    <li><a href="Course_Details/Android_Dev.html">Android App Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@codeinfinity.com">contact@codeinfinity.com</a></li>
+                    <li><a href="#">YouTube Channel</a></li>
+                    <li><a href="#">Discord Server</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="copyright-line">© 2026 Code_Infinity. All rights reserved.</span>
+            <span class="copyright-line">Designed with <i class="fas fa-heart" style="color: var(--neon-pink);"></i> for the developer community</span>
+        </div>
+    </footer>
+    <script src="js/themes.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

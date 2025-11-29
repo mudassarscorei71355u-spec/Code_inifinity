@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code_Infinity | Game Development Mastery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-menu-overlay"></div>
+            <a href="../index.html" class="logo">
+                <!-- Coding-themed logo with brackets and infinity symbol -->
+                <svg class="logo-img glowing" xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 500 60">
+                    <defs>
+                        <linearGradient id="codeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#00ffff" style="stop-opacity:1" />
+                            <stop offset="50%" stop-color="#ff00ff" style="stop-opacity:1" />
+                            <stop offset="100%" stop-color="#00ff80" style="stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Code brackets { } -->
+                    <text x="5" y="45" font-size="50" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">{</text>
+                    
+                    <!-- Infinity symbol ∞ -->
+                    <path d="M 45 30 Q 55 20, 65 30 Q 75 40, 85 30 Q 95 20, 105 30 Q 95 40, 85 30 Q 75 20, 65 30 Q 55 40, 45 30" 
+                          stroke="url(#codeGradient)" 
+                          stroke-width="3" 
+                          fill="none" 
+                          filter="url(#glow)"/>
+                    
+                    <!-- Closing bracket } -->
+                    <text x="115" y="45" font-size="50" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">}</text>
+                    
+                    <!-- Code_Infinity text -->
+                    <text x="150" y="42" font-size="32" font-family="'Courier New', monospace" font-weight="bold" fill="url(#codeGradient)" filter="url(#glow)">
+                        Code_Infinity
+                    </text>
+                    
+                    <!-- Terminal cursor -->
+                    <rect x="480" y="20" width="3" height="20" fill="url(#codeGradient)" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite"/>
+                    </rect>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                
+                <!-- Courses Dropdown -->
+                <div class="dropdown">
+                    <div class="dropdown-toggle">
+                        <span>Courses</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="Full_Stack_Web_Dev.html" class="dropdown-item">
+                            <i class="fas fa-code course-icon" style="color: var(--neon-cyan);"></i>
+                            <div>
+                                <div style="font-weight: 700;">Full-Stack Web Development</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                        
+                        <a href="AI_ML.html" class="dropdown-item">
+                            <i class="fas fa-brain course-icon" style="color: #9b59b6;"></i>
+                            <div>
+                                <div style="font-weight: 700;">AI & Machine Learning</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                        
+                        <a href="Cybersecurity.html" class="dropdown-item">
+                            <i class="fas fa-shield-alt course-icon" style="color: #e74c3c;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Cybersecurity</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+
+                        <a href="Game_Dev.html" class="dropdown-item">
+                            <i class="fas fa-gamepad course-icon" style="color: #f39c12;"></i>
+                            <div>
+                                <div style="font-weight: 700; color: #f39c12;">Game Development</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+
+                        <a href="Android_Dev.html" class="dropdown-item">
+                            <i class="fab fa-android course-icon" style="color: #3ddc84;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Android App Development</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Available Now</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="dropdown theme-dropdown">
+                <div class="dropdown-toggle">
+                    <span>Themes</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="theme-option active" data-theme="neon-nexus">
+                        <span>Neon Nexus</span>
+                        <span class="current-indicator">(current)</span>
+                    </div>
+                    <div class="theme-option" data-theme="dark">
+                        <span>Dark</span>
+                    </div>
+                    <div class="theme-option" data-theme="white">
+                        <span>White</span>
+                    </div>
+                </div>
+            </div>
+            <button class="cta-button">Go To Channel</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Falling glass overlay -->
+        <div class="glass"></div>
+        <div class="glass"></div>
+        <div class="glass"></div>
+        <div class="glass"></div>
+        
+        <h1>Game Development Mastery 2026</h1>
+        <p>Create amazing 2D and 3D games with Unity and Unreal Engine. From game design to publishing on major platforms.</p>
+        <div class="hero-buttons">
+            <a href="#playlist" class="btn btn-primary">
+                <i class="fas fa-gamepad"></i> Start Learning Now
+            </a>
+            <a href="#about" class="btn btn-secondary">
+                <i class="fas fa-play-circle"></i> Watch Intro Video
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About This Playlist</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>This comprehensive 20-video playlist takes you from game design basics to publishing your own games. Each video builds upon the previous, creating a complete learning journey through game development.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h3>🎮 Complete Game Dev Path</h3>
+                            <p>From basics to publishing games</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🎯 Industry Engines</h3>
+                            <p>Unity, Unreal Engine & Godot</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🎨 Real Game Projects</h3>
+                            <p>Build portfolio-worthy games</p>
+                        </div>
+                        <div class="feature">
+                            <h3>⚡ Publish Ready</h3>
+                            <p>Steam, App Store, Play Store</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <h3>Technologies You'll Master</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item floating">
+                            <i class="fab fa-unity tech-icon" style="font-size: 2.5rem; color: #fff;"></i>
+                            <span class="tech-name">Unity</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:.2s">
+                            <i class="fas fa-cube tech-icon" style="font-size: 2.5rem; color: #0e77d5;"></i>
+                            <span class="tech-name">Unreal Engine</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:.4s">
+                            <i class="fas fa-code tech-icon" style="font-size: 2.5rem; color: #68217a;"></i>
+                            <span class="tech-name">C#</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:.6s">
+                            <i class="fas fa-cogs tech-icon" style="font-size: 2.5rem; color: #f34b7d;"></i>
+                            <span class="tech-name">C++</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:.8s">
+                            <i class="fas fa-draw-polygon tech-icon" style="font-size: 2.5rem; color: #ff7c00;"></i>
+                            <span class="tech-name">Blender</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:1s">
+                            <i class="fas fa-robot tech-icon" style="font-size: 2.5rem; color: #478cbf;"></i>
+                            <span class="tech-name">Godot</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:1.2s">
+                            <i class="fas fa-paint-brush tech-icon" style="font-size: 2.5rem; color: #31a8ff;"></i>
+                            <span class="tech-name">Photoshop</span>
+                        </div>
+                        <div class="tech-item floating" style="animation-delay:1.4s">
+                            <i class="fab fa-steam tech-icon" style="font-size: 2.5rem; color: #1b2838;"></i>
+                            <span class="tech-name">Steam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlist Section -->
+    <section id="playlist" class="playlist">
+        <div class="container">
+            <h2 class="section-title">Complete Learning Playlist</h2>
+            <p class="section-subtitle">20 Videos - From Beginner to Game Developer</p>
+            
+            <div class="playlist-container">
+                <!-- Phase 1: Game Development Basics -->
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 1: Game Development Basics (Videos 1-4)</h3>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-number">01</div>
+                            <h4 class="video-title">Introduction to Game Development</h4>
+                            <ul class="video-topics">
+                                <li>Game development overview</li>
+                                <li>Game engines comparison</li>
+                                <li>Game design fundamentals</li>
+                                <li>Setting up development environment</li>
+                                <li>Game development pipeline</li>
+                                <li>Career paths in gaming</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">02</div>
+                            <h4 class="video-title">C# Programming for Unity</h4>
+                            <ul class="video-topics">
+                                <li>C# basics and syntax</li>
+                                <li>Object-oriented programming</li>
+                                <li>Classes and inheritance</li>
+                                <li>Collections and generics</li>
+                                <li>Unity scripting API</li>
+                                <li>Debugging techniques</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">03</div>
+                            <h4 class="video-title">Unity Fundamentals</h4>
+                            <ul class="video-topics">
+                                <li>Unity interface mastery</li>
+                                <li>GameObjects and components</li>
+                                <li>Transforms and hierarchy</li>
+                                <li>Prefabs and instantiation</li>
+                                <li>Scene management</li>
+                                <li>First game project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">04</div>
+                            <h4 class="video-title">Game Mathematics Essentials</h4>
+                            <ul class="video-topics">
+                                <li>Vectors and mathematics</li>
+                                <li>Trigonometry for games</li>
+                                <li>Physics calculations</li>
+                                <li>Collision detection math</li>
+                                <li>Interpolation techniques</li>
+                                <li>Random number generation</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: 2D Game Development -->
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 2: 2D Game Development (Videos 5-8)</h3>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-number">05</div>
+                            <h4 class="video-title">2D Game Mechanics</h4>
+                            <ul class="video-topics">
+                                <li>Sprite rendering</li>
+                                <li>2D physics engine</li>
+                                <li>Player movement</li>
+                                <li>Collision handling</li>
+                                <li>Tilemaps and levels</li>
+                                <li>Camera systems</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">06</div>
+                            <h4 class="video-title">2D Animation Systems</h4>
+                            <ul class="video-topics">
+                                <li>Sprite animations</li>
+                                <li>Animation controllers</li>
+                                <li>State machines</li>
+                                <li>Blend trees</li>
+                                <li>Skeletal animation</li>
+                                <li>Animation events</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">07</div>
+                            <h4 class="video-title">Building a Platformer Game</h4>
+                            <ul class="video-topics">
+                                <li>Character controller</li>
+                                <li>Jump mechanics</li>
+                                <li>Enemy AI basics</li>
+                                <li>Collectibles system</li>
+                                <li>Level progression</li>
+                                <li>Complete platformer project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">08</div>
+                            <h4 class="video-title">UI/UX for Games</h4>
+                            <ul class="video-topics">
+                                <li>Unity UI system</li>
+                                <li>Menu design</li>
+                                <li>HUD elements</li>
+                                <li>Health bars & indicators</li>
+                                <li>Screen transitions</li>
+                                <li>Responsive UI</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: 3D Game Development -->
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 3: 3D Game Development (Videos 9-12)</h3>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-number">09</div>
+                            <h4 class="video-title">3D Game Fundamentals</h4>
+                            <ul class="video-topics">
+                                <li>3D coordinate systems</li>
+                                <li>3D physics</li>
+                                <li>Materials and shaders</li>
+                                <li>Lighting basics</li>
+                                <li>3D camera systems</li>
+                                <li>First-person controller</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">10</div>
+                            <h4 class="video-title">Character Controllers & Animation</h4>
+                            <ul class="video-topics">
+                                <li>Third-person controller</li>
+                                <li>Character animation</li>
+                                <li>IK systems</li>
+                                <li>Ragdoll physics</li>
+                                <li>Animation rigging</li>
+                                <li>Mocap integration</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">11</div>
+                            <h4 class="video-title">AI & Pathfinding</h4>
+                            <ul class="video-topics">
+                                <li>NavMesh system</li>
+                                <li>A* pathfinding</li>
+                                <li>State machines for AI</li>
+                                <li>Behavior trees</li>
+                                <li>Enemy AI patterns</li>
+                                <li>NPC interactions</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">12</div>
+                            <h4 class="video-title">Building an FPS Game</h4>
+                            <ul class="video-topics">
+                                <li>FPS controller</li>
+                                <li>Weapon systems</li>
+                                <li>Shooting mechanics</li>
+                                <li>Enemy waves</li>
+                                <li>Damage systems</li>
+                                <li>Complete FPS project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Advanced Topics -->
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 4: Advanced Topics (Videos 13-16)</h3>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-number">13</div>
+                            <h4 class="video-title">Unreal Engine Fundamentals</h4>
+                            <ul class="video-topics">
+                                <li>Unreal interface</li>
+                                <li>Blueprints visual scripting</li>
+                                <li>C++ basics for Unreal</li>
+                                <li>Materials system</li>
+                                <li>Level design</li>
+                                <li>First Unreal project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">14</div>
+                            <h4 class="video-title">Multiplayer Game Development</h4>
+                            <ul class="video-topics">
+                                <li>Networking fundamentals</li>
+                                <li>Client-server architecture</li>
+                                <li>Photon/Mirror integration</li>
+                                <li>Lag compensation</li>
+                                <li>Matchmaking systems</li>
+                                <li>Multiplayer game project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">15</div>
+                            <h4 class="video-title">Audio & Sound Design</h4>
+                            <ul class="video-topics">
+                                <li>Audio system basics</li>
+                                <li>3D spatial audio</li>
+                                <li>Music integration</li>
+                                <li>Sound effects</li>
+                                <li>FMOD/Wwise</li>
+                                <li>Adaptive audio</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">16</div>
+                            <h4 class="video-title">Shader Programming</h4>
+                            <ul class="video-topics">
+                                <li>Shader basics</li>
+                                <li>HLSL/ShaderLab</li>
+                                <li>Visual effects</li>
+                                <li>Post-processing</li>
+                                <li>Shader Graph</li>
+                                <li>Custom render effects</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Publishing & Business -->
+                <div class="phase-section">
+                    <h3 class="phase-title">Phase 5: Publishing & Business (Videos 17-20)</h3>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-number">17</div>
+                            <h4 class="video-title">Game Optimization</h4>
+                            <ul class="video-topics">
+                                <li>Performance profiling</li>
+                                <li>Memory management</li>
+                                <li>LOD systems</li>
+                                <li>Occlusion culling</li>
+                                <li>Mobile optimization</li>
+                                <li>Build optimization</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">18</div>
+                            <h4 class="video-title">Mobile Game Development</h4>
+                            <ul class="video-topics">
+                                <li>Mobile input systems</li>
+                                <li>Touch controls</li>
+                                <li>Mobile-specific optimization</li>
+                                <li>In-app purchases</li>
+                                <li>Ad integration</li>
+                                <li>Mobile game project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">19</div>
+                            <h4 class="video-title">Publishing Your Game</h4>
+                            <ul class="video-topics">
+                                <li>Steam publishing</li>
+                                <li>App Store/Play Store</li>
+                                <li>Marketing strategies</li>
+                                <li>Store page optimization</li>
+                                <li>Community building</li>
+                                <li>Launch checklist</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="video-card">
+                            <div class="video-number">20</div>
+                            <h4 class="video-title">Game Industry & Capstone</h4>
+                            <ul class="video-topics">
+                                <li>Industry overview</li>
+                                <li>Portfolio building</li>
+                                <li>Game design document</li>
+                                <li>Team collaboration</li>
+                                <li>Career guidance</li>
+                                <li>Final capstone project</li>
+                                <li><a href="#" class="watch-btn" target="_blank">▶ Watch Video</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" class="notes-section">
+        <div class="container">
+            <h2 class="section-title">Course Notes & Resources</h2>
+            <div class="notes-content">
+                <p class="notes-description">Access comprehensive notes for all videos in this course. These notes include detailed explanations, code examples, and additional resources to help you master the material. You can view them online or download as PDF.</p>
+                <div class="notes-buttons">
+                    <a href="../Course_Notes/Game_Dev_Notes.html" target="_blank" class="btn btn-primary notes-download-btn" onclick="passThemeToNotes()">
+                        <i class="fas fa-book"></i> View Course Notes
+                    </a>
+                    <button class="btn btn-secondary notes-download-btn" onclick="downloadNotesPDF('Game_Dev_Notes.html', 'Game_Development_Notes.pdf')">
+                        <i class="fas fa-download"></i> Download PDF Notes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about-info">
+        <h2 class="section-title">About Code_Infinity</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Pushing the Boundaries of Code</h2>
+                <p>Code_Infinity is dedicated to providing high-quality programming education that goes beyond the basics. We believe in empowering developers with the skills needed to build the future.</p>
+                <p>Our courses are designed with a project-based approach, ensuring you gain practical experience while learning theoretical concepts.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Students Enrolled</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">Courses Available</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Hours of Content</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-icon-box game-dev">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Code_Infinity</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Master cutting-edge technologies and push your coding skills beyond limits with our comprehensive courses.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Courses</h3>
+                <ul class="footer-links">
+                    <li><a href="Full_Stack_Web_Dev.html">Full-Stack Development</a></li>
+                    <li><a href="AI_ML.html">AI & Machine Learning</a></li>
+                    <li><a href="Cybersecurity.html">Cybersecurity</a></li>
+                    <li><a href="Game_Dev.html">Game Development</a></li>
+                    <li><a href="Android_Dev.html">Android App Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@codeinfinity.com">contact@codeinfinity.com</a></li>
+                    <li><a href="#">YouTube Channel</a></li>
+                    <li><a href="#">Discord Server</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="copyright-line">© 2026 Code_Infinity. All rights reserved.</span>
+            <span class="copyright-line">Designed with <i class="fas fa-heart" style="color: var(--neon-pink);"></i> for the developer community</span>
+        </div>
+    </footer>
+
+    <script src="../js/themes.js"></script>
+    <script src="js/phases.js"></script>
+    <script src="js/milestones.js"></script>
+    <script src="js/notes-download.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle for course detail pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            
+            if (mobileMenuToggle && navLinks) {
+                function toggleMobileMenu() {
+                    mobileMenuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.toggle('active');
+                    }
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                }
+                
+                mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+                
+                if (mobileMenuOverlay) {
+                    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+                }
+                
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navLinks.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+                
+                navLinks.querySelectorAll('.dropdown-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        if (navLinks.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+                
+                navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            e.preventDefault();
+                            const targetId = href.substring(1);
+                            const targetElement = document.getElementById(targetId);
+                            if (targetElement) {
+                                if (navLinks.classList.contains('active')) {
+                                    toggleMobileMenu();
+                                }
+                                targetElement.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    });
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Notes Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 20px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid #3b82f6;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #1e293b;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #64748b;
+            font-size: 1.2em;
+        }
+        
+        .video-section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .video-header {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .video-number {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .video-title {
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+        
+        .topic-dropdown {
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .topic-header {
+            background: #f8fafc;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e293b;
+            transition: background 0.3s;
+        }
+        
+        .topic-header:hover {
+            background: #f1f5f9;
+        }
+        
+        .topic-header.active {
+            background: #e0e7ff;
+            color: #3b82f6;
+        }
+        
+        .topic-icon {
+            transition: transform 0.3s;
+        }
+        
+        .topic-header.active .topic-icon {
+            transform: rotate(180deg);
+        }
+        
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .topic-content.active {
+            max-height: 5000px;
+        }
+        
+        .topic-body {
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .topic-body h3 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .topic-body p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .code-block code {
+            color: #e2e8f0;
+        }
+        
+        .example-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .example-box h4 {
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+        
+        .note-tip {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .note-tip h4 {
+            color: #d97706;
+            margin-bottom: 10px;
+        }
+        
+        .note-warning {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .note-warning h4 {
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #475569;
+        }
+        
+        .toc {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .toc h2 {
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .toc a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            .video-section {
+                page-break-inside: avoid;
+            }
+            .topic-content {
+                max-height: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>COURSE_NAME - Complete Notes</h1>
+            <p class="subtitle">Comprehensive Study Guide with Examples and Explanations</p>
+        </header>
+        
+        <div class="toc no-print">
+            <h2>Table of Contents</h2>
+            <ul id="toc-list">
+                <!-- TOC will be generated by JavaScript -->
+            </ul>
+        </div>
+        
+        <!-- Video sections will be inserted here -->
+        <div id="content"></div>
+    </div>
+    
+    <script>
+        // Toggle dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.topic-header');
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+                    
+                    // Close all other dropdowns
+                    headers.forEach(h => {
+                        if (h !== this) {
+                            h.classList.remove('active');
+                            h.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    if (isActive) {
+                        this.classList.remove('active');
+                        content.classList.remove('active');
+                    } else {
+                        this.classList.add('active');
+                        content.classList.add('active');
+                    }
+                });
+            });
+            
+            // Generate TOC
+            const videoSections = document.querySelectorAll('.video-section');
+            const tocList = document.getElementById('toc-list');
+            videoSections.forEach((section, index) => {
+                const title = section.querySelector('.video-title').textContent;
+                const videoNum = section.querySelector('.video-number').textContent;
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#video-${index + 1}">${videoNum} - ${title}</a>`;
+                section.id = `video-${index + 1}`;
+                tocList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
+
